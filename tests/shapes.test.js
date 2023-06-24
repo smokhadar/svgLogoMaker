@@ -1,28 +1,31 @@
-const svg = require('../lib/shapes');
+const { Svg, Triangle, Circle, Square, GenerateShape} = require('../lib/shapes');
 
-describe('svg', () => {
-    it('setColor returns svg code', () => {
-        // const color = blue;
-        const result = new svg.Svg().setColor('blue');
-        expect(result).toEqual(`
-        <svg xmlns="http://www.w3.org/2000/svg">
-        <rect x="10" y="10" width="50" height="50" stroke="blue" fill="red" stroke-width: "15"/> </svg>
+describe('Square', () => {
+    it('shapeRender returns square svg code', () => {
+        const square = new Square('IH', 'black', 'white').setColor().setText().shapeRender();
+        expect(square).toEqual(`
+        <svg width="300" height="200">
+        <rect x="10" y="10" width="150" height="150" fill="white"/> <text x="45" y="75" font-weight="bold" font-size= '2em' fill="black">IH</text></svg>
         `);
     })
 })
 
-describe('triangle', () => {
-    it('create object with shape prop', () => {
-        const triangle = new svg.Triangle('LOL', 'green', 'blue');
-        expect(triangle).toEqual( { "text": "LOL", "tColor": "green", "sColor": "blue", "shape": "triangle" })
+describe('Circle', () => {
+    it('shapeRender returns circle svg code', () => {
+        const circle = new Circle('IH', 'black', 'white').setColor().setText().shapeRender();
+        expect(circle).toEqual(`
+        <svg width="300" height="200">
+        <circle cx="65" cy="70" r="50" fill="white"/> <text x="45" y="75" font-weight="bold" font-size= '2em' fill="black">IH</text></svg>
+        `);
     })
 })
 
-// describe('svg', () => {
-//     it('add color', () => {
-//         const shape = new Triangle();
-//         shape.setColor("blue");
-//         expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
-//     }
-//     )
-// })
+describe('Triangle', () => {
+    it('shapeRender returns triangle svg code', () => {
+        const triangle = new Triangle('LOL', 'blue', 'pink').setColor().setText().shapeRender();
+        expect(triangle).toEqual(`
+        <svg width="300" height="200">
+        <triangle polygon points="100, 0 100, 100 0, 100" fill="pink"/> <text x="45" y="75" font-weight="bold" font-size= '2em' fill="blue">LOL</text></svg>
+        `)
+    })
+})
