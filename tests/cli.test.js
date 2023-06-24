@@ -5,3 +5,4 @@ describe('CLI', () => {
         expect(CLI).toBeDefined();
     })
 })
+

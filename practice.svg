@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg">
-<rect x="10" y="10" width="50" height="50" stroke="blue" fill="red" stroke-width: "15"/>    
-</svg>
-
-<!-- below provides sample code for basic shapes -->
-<!-- https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes -->
